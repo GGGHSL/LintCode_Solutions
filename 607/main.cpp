@@ -8,7 +8,6 @@ using std::endl;
 using std::string;
 using std::vector;
 
-
 int main() {
 	TwoSum ts;
 	ts.add(2);

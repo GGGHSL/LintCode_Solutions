@@ -14,16 +14,19 @@
 #ifndef TWOSUM
 #define TWOSUM
 #include <unordered_map>
-using std::unordered_map;
+#include <unordered_set>
+using std::unordered_multiset;
+
 
 class TwoSum {
+	unordered_multiset<int> nums;
 public:
 	/**
 	 * @param number: An integer
 	 * @return: nothing
 	 */
 	void add(int number) {
-		++nums[number];
+		nums.insert(number);
 	}
 
 	/**
@@ -36,18 +39,21 @@ public:
 			return false;
 		}
 		else {
-			for (auto b = nums.begin(); b != nums.end(); ++b) {
-				auto num = (*b).first;
+			for (auto num : nums) {
+				/*
 				if (num != value - num && nums.find(value - num) != nums.end())
 					return true;
-				else if (num == value - num && nums[num] > 1)
+				else if (num == value - num && nums.count(num) > 1)
 					return true;
+				*/
+				int cnt = num == value - num ? 2 : 1;
+				if (nums.count(value - num) >= cnt) {
+					return true;
+				}
 			}
 			return false;
 		}
 	}
-private:
-	unordered_map<int, size_t> nums;
 };
 
 #endif // !TWOSUM

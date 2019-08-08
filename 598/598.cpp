@@ -49,7 +49,7 @@ public:
 			return -1;
 		}
 
-		vector<vector<int>> visit(grid.size(), vector<int>(grid[0].size(), 0));
+		vector<vector<bool>> visit(grid.size(), vector<bool>(grid[0].size(), 0));
 		int dx[4] = { 0, 0, 1, -1 };
 		int dy[4] = { 1, -1, 0, 0 };
 		std::deque<int> qx, qy;

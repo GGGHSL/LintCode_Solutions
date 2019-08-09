@@ -1,4 +1,4 @@
-# LintCode_Solutions
+# LintCode Solutions
 ## Problem List:
 ### 1. String
 ### 2. Bineary Search/ Log(n) Algorithm
